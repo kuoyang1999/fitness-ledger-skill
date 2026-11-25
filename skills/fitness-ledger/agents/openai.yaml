@@ -1,0 +1,4 @@
+interface:
+  display_name: "运动计划与记录"
+  short_description: "用 Notion 维护训练、饮食、体测、按睡眠分日的双汇总和周检"
+  default_prompt: "使用 $fitness-ledger，根据我的项目索引接手续写本次运动计划或记录。"
