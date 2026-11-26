@@ -1,6 +1,8 @@
 # Fitness Ledger · 运动计划与记录
 
-给 Codex 使用的中文 Agent Skill。它让跑步、力量、攀岩、饮食和体测聊天共用一个 Notion 项目，并按主睡眠醒来的时间归档。例如，凌晨一点跑完步、吃了东西又去睡，训练和餐食继续归到醒着的那个作息日。午睡不会另开一天。
+**简体中文** · [English](README.en.md)
+
+给 Codex 使用的中英双语 Agent Skill。它让跑步、力量、攀岩、饮食和体测聊天共用一个 Notion 项目，并按主睡眠醒来的时间归档。例如，凌晨一点跑完步、吃了东西又去睡，训练和餐食继续归到醒着的那个作息日。午睡不会另开一天。
 
 Skill 包含[训练计划与专项记录](skills/fitness-ledger/references/event-records.md)、[作息日与每日双汇总](skills/fitness-ledger/references/sleep-day.md)和[每周维护](skills/fitness-ledger/references/weekly-review.md)。建议、已确认的计划和实际训练分别保存，跨聊天补报可以追溯回原事件。
 
@@ -20,6 +22,14 @@ test ! -e "$skills_dir/fitness-ledger" && cp -R fitness-ledger-skill/skills/fitn
 ```
 
 在新聊天中输入 `$fitness-ledger` 并说明任务。首次使用时，在自己的聊天中提供 Notion 项目入口、默认时区和需要维护的专项。若希望读取睡眠，使用已连接并允许读取本人 Apple Health 的环境。也可以直接报告最终醒来时间。安装本 Skill 后，周检和双汇总都可手动调用。定时运行需单独设置。
+
+## 连接自己的 Notion
+
+在使用 Skill 的聊天里启用 Notion 连接并登录自己的账号，确保该账号和连接可以访问目标项目。在私有聊天中提供项目主页或索引链接。可以先做一次只读检查：
+
+> 使用 $fitness-ledger，通过 Notion 打开【我的项目入口】，返回实际读到的页面标题、训练记录库和每日汇总的位置。这次只检查连接。
+
+能够打开项目主页就说明该页可读。写入还需要目标库的编辑权限和本次任务的授权。Skill 通过当前环境提供的 Notion 工具查库、更新并回读，仓库和安装包均不附带账号、令牌或个人项目链接。Apple Health 是独立的数据来源。
 
 ## 三种用法
 
